@@ -1,0 +1,194 @@
+{% extends "tmate/base.html" %}
+
+{% block static %}
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+{% load tmate_filters %}
+
+<section id="profile_whole">
+
+  <div class="one_profile">
+    <img class="one_profile_img" src="{{profile.picture_url}}"/>
+    <div class="one_profile_des">
+      <div class="one_profile_other">
+        {% if is_login %}
+        <a id="link_contact" href="mailto:{{profile.user.email}}"><p><i class="fa fa-comment"></i> Contact</p></a>
+        {% else %}
+        <a id="link_contact" href="{% url 'login' %}"><p><i class="fa fa-comment"></i> Contact</p></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="one_detail">
+    <div class="one_detail_people">
+      <h5>{{profile.print_name}}</h5>
+      <div class="position">
+        <a href="#">
+          <p class="position_tag">{{profile.position}}</p>
+        </a>
+      </div>
+    </div>
+    <div class="one_detail_skill">
+
+      {% for ht in profile.skills.all %}
+      <a href="{% url 'search'%}?q={{ht.content}}"><p class="skill_tag">{{ht.content}}</p></a>
+      {% endfor %}
+
+    </div>
+
+    <div>
+      <div class="profile_location"><i class="fa fa-map-marker fa-2x" style="color: #777; padding: 0.5em 0;"></i> <p>{{profile.location}}</p></div>
+      <div class="profile_location">
+          {% for i in profile.credits_d|get_range %}
+          <i class="fa fa-star" style="color: #777;"></i>
+          {% endfor %}
+          {% for i in profile.inv_credits_d|get_range %}
+          <i class="fa fa-star-o" style="color: #777;"></i>
+          {% endfor %}
+          <p>{{profile.credits}}</p>
+      </div>
+    </div>
+    <div>
+      <div class="profile_location">
+        <img class="resume_img" src="{% static 'img/resume.png' %}"/><a id="link_resume" href="{{profile.resume_url}}" target="_blank"><p class="resume">Resume</p></a>
+      </div>
+      <div class="profile_location">
+        <img class="link_img" src="{% static 'img/link.png' %}"/><a id="link_resume" href="{{profile.portfolio}}" target="_blank"><p class="resume">Portfolio</p></a>
+      </div>
+    </div>
+
+  </div>
+  <div class="clear"></div>
+  <div class="profile_overview">
+    <div class="profile_history_center">
+      <h2 class="profile_title">Overview</h2>
+      <p class="overview_intro">
+        {{profile.overview|safe}}
+      </p>
+    </div>
+  </div>
+
+  <div class="profile_history">
+    <div class="profile_history_center">
+      <h2 class="profile_title">Work History&Overview</h2>
+      {% if not comments %}
+      <p>Empty</p>
+      {% endif %}
+
+      {% for c in comments %}
+      <div class="profile_history_detail">
+        <div class="profile_comment">
+          <h3 class="profile_history_subtitle">{{c.title}}</h3>
+          <p>“{{c.content}}”</p>
+          <p class="profile_date">{{c.ctime}}</p>
+        </div>
+        <div class="profile_rate">
+          <h2 class="grade">{{c.score}}</h2>
+
+          <div class="profile_star">
+            {% for i in c.score|get_range %}
+            <i class="fa fa-star"></i>
+            {% endfor %}
+            {% for i in c.inv_score|get_range %}
+            <i class="fa fa-star-o"></i>
+            {% endfor %}
+          </div>
+
+        </div>
+        <div class="clear"></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="comment">
+    <div class="profile_history_center">
+      <h2 class="profile_title">Comments</h2>
+
+      <!--
+      <form action="#" method="POST">
+        {{form}}
+        {% csrf_token %}
+        <input type="submit" value="Submit"/>
+      </form>
+      -->
+
+      <form action="#" method="POST">
+
+        {{form.title.errors}}
+        <input id="id_title" class="comment_title" maxlength="1024" name="title" type="text" placeholder="Title">
+
+        {{form.content.errors}}
+        <textarea class="comment_des" cols="50" rows="4" id="id_content" name="content" placeholder="Comment on this TMate profile"></textarea>
+
+        <div class="comment_oneline">
+          <div class="comment_score">
+            <p class="comment_score_p">Score:</p>
+            <div class="comment_score_fa">
+              <span class="input-star"><i class="fa fa-star-o"></i></span>
+              <span class="input-star"><i class="fa fa-star-o"></i></span>
+              <span class="input-star"><i class="fa fa-star-o"></i></span>
+              <span class="input-star"><i class="fa fa-star-o"></i></span>
+              <span class="input-star"><i class="fa fa-star-o"></i></span>
+            </div>
+            <p id="score_display" class="comment_score_p">(0)</p>
+            {{form.score.errors}}
+            <div style="display:none;">
+            {{form.score}}
+            </div>
+          </div>
+            {% if is_login %}
+            <div>
+              <input type="submit" value="Submit" class="submit_profile"/>
+            </div>
+            {% else %}
+            <div class="comment_submit">
+              <a id="comment_link" href="{% url 'django.contrib.auth.views.login' %}?next={{request.path}}"><p>Submit</p></a>
+            </div>
+            {% endif %}
+          <div class="clear"></div>
+        </div>
+
+      {% csrf_token %}
+      </form>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+{% load static %}
+
+{% endblock %}
+
+{% block js %}
+<script>
+  var stars = $('.input-star');
+  function star_turn_on(n) {
+    var i=0;
+    for(; i<=n ; i++) {
+      stars[i].innerHTML='<i class="fa fa-star"></i>';
+    }
+    for(; i<5 ; i++) {
+      stars[i].innerHTML='<i class="fa fa-star-o"></i>';
+    }
+
+  }
+  stars.hover(
+    function() {
+      var ind =  $(this).index();
+      console.log(ind);
+      star_turn_on(ind);
+      $('#id_score').val(ind+1);
+      $('#score_display').text("(" + (ind + 1) + ")");
+    }, function() {
+      console.log("out");
+    }
+  );
+</script>
+{% endblock %}

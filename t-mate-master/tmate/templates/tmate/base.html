@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Tmate{% endblock %}</title>
+
+    {% load static %}
+
+    <link href="{% static 'css/reset.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/modal/modal.css' %}" type="text/css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+      <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+
+      <!--<link rel="icon" href="{{STATIC_URL}}images/favicon.ico" type="image/x-icon" />-->
+      <meta name="description" content="Meet Designers and Programmers"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="mobile-web-app-capable" content="yes"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+      {% block meta %}{% endblock %}
+      {% block static %}
+      {% endblock %}
+
+    </head>
+    {% autoescape on %}
+    <body>
+
+      {% block nav %}
+      <header>
+        <nav>
+          <a href="{% url 'index' %}" id="logo"><img src="{% static 'img/logo-01.png'%}" alt="Tmate"/></a>
+          <ul class="navigation">
+            <!-- UL STARTS ABOVE TO ELIMINATE VISUAL GAP  -->
+
+            {% if not is_login %}
+            <li><a href="{% url 'login' %}">LOG IN</a></li>
+            {% else %}
+            <li><a href="{% url 'logout' %}">LOG OUT</a></li>
+            {% endif %}
+
+            <li><a id="get_started" href="{% url 'register_entry' %}">GET STARTED</a></li>
+          </ul>
+          <div class="clear"></div>
+        </nav>
+      </header>
+      {% endblock %}
+
+      {% block content %}
+      {% endblock %}
+
+      {% block foot %}
+
+      <div class="clear"></div>
+
+      <footer>
+        <div class="center">
+          <img width="50" src="{% static 'img/tmate-11.png'%}"/>
+        </div>
+
+        <p>Yeqing Deng • Wenzhu Liu • Heron Yang<br />
+        ©2015 Tmate. All rights reserved.</p>
+
+        <div class="icon_social">
+          <i class="fa fa-tumblr-square fa-2x"></i>
+          <i class="fa fa-rss-square fa-2x"></i>
+          <i class="fa fa-twitter-square fa-2x"></i>
+          <i class="fa fa-facebook-square fa-2x"></i>
+          <i class="fa fa-envelope-square fa-2x"></i>
+        </div>
+
+      </footer>
+
+      {% endblock %}
+
+      <!-- JS -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
+
+      {% block js %}
+      {% endblock %}
+
+    </body>
+    {% endautoescape %}
+  </html>

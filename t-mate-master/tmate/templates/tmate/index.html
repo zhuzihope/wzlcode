@@ -1,0 +1,204 @@
+{% extends "tmate/base.html" %}
+
+{% block static %}
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section>
+  <div class="big_title">
+ 
+    <img id="big_img" src="{% static 'img/bg-01.png' %}" alt=""/>
+    <div class="text_area">
+      <div class="text_area_width">
+        <h2>Meet Designers and Programmers</h2>
+        <h5>Programmers, designers and ideas meet together.<span class="only_mobile"></span>
+          Get works done.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="search_middle">
+      <form id="tfnewsearch" method="get" action="{% url 'search' %}">
+        <input type="text" id="tfq" class="tftextinput2" name="q" size="21" maxlength="120" placeholder="Designers? Programmers? Skills?"/>
+        <input type="submit" value="Search" class="tfbutton2"/>
+      </form>
+      <div class="tfclear"></div>
+  </div>
+  
+
+
+  <div class="index_container">
+
+    <div class="design_program">
+      <h5 class="subtitle">Find the Right Freelancers.</h5>
+      <p class="subtitle_des">Designers and programmers band together to build.<br />Work gets done.</p>
+    </div>
+    <div class="showcase">
+
+      <div class="half">
+
+        <div class="icon">
+          <img class="icon_img" src="{% static 'img/icon_des.png' %}"/>
+          <a href="{% url 'search' %}?q=designers"><input type="submit" value="See all Designers" class="sign_up_button des_color"/></a>
+        </div>
+      </div>
+      <div class="half">
+        <div class="icon">
+          <img class="icon_img" src="{% static 'img/icon_pro.png' %}"/>
+          <a href="{% url 'search' %}?q=programmers"><input type="submit" value="See all Programmers" class="sign_up_button pro_color"/></a>
+        </div>
+      </div>
+       <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="index_container gray promotion_container1 promotion_container">
+    <div class="showcase promotion">
+      <div class="half center vertical_center">
+        <h5 class="subtitle">Bussiness, Build Your Online Team.</h5>
+        <p class="subtitle_des">Get works done with your favorite programmers and designers. Hire freelancers on your demands, alway knowing their previous works and comments from other beforehand.</p>
+      </div>
+      <div class="half center">
+        <div class="icon">
+          <img class="icon_img" src="{% static 'img/tmate-08.png' %}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="index_container promotion_container promotion_container2 desktop_only">
+    <div class="showcase promotion">
+      <div class="half center vertical_center">
+        <div class="icon">
+          <img class="icon_img_left" src="{% static 'img/tmate-09.png' %}"/>
+        </div>
+      </div>
+      <div class="half center">
+        <h5 class="subtitle">Designers, Get Hired.</h5>
+        <p class="subtitle_des">Great works can only be done with great perfectionists, and never standalone without designs.</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+
+  <div class="index_container promotion_container promotion_container2 mobile_only">
+    <div class="showcase promotion">
+      <div class="half center">
+        <h5 class="subtitle">Designers, Get Hired.</h5>
+        <p class="subtitle_des">Great works can only be done with great perfectionists, and never standalone without designs.</p>
+      </div>
+      <div class="half center vertical_center">
+        <div class="icon">
+          <img class="icon_img_left" src="{% static 'img/tmate-09.png' %}"/>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="index_container gray promotion_container promotion_container3">
+    <div class="showcase promotion">
+      <div class="half center vertical_center">
+        <h5 class="subtitle">Programmers, Find Work.</h5>
+        <p class="subtitle_des">Any sufficiently advanced tectnology is indistinguishable from magic, and we all desire miracles.</p>
+      </div>
+      <div class="half center">
+        <div class="icon">
+          <img class="icon_img_right" src="{% static 'img/tmate-10.png' %}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- statistic -->
+  <div class="index_container orange statistic_container">
+    <div class="showcase">
+      <div class="third center">
+        <div class="stat">
+          <h4><span id="stat1">2,932</span></h4>
+          <hr/>
+          <p>Registered Users</p>
+        </div>
+      </div>
+      <div class="third center">
+        <div class="stat">
+          <h4><span id="stat2">3,221</span></h4>
+          <hr/>
+          <p>Users Online</p>
+        </div>
+      </div>
+      <div class="third center">
+        <div class="stat">
+          <h4><span id="stat3">298,323,291</span></h4>
+          <hr/>
+          <p>Page Views</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<div class="clear"></div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+  var ele1 = $('#stat1');
+  var ele2 = $('#stat2');
+  var ele3 = $('#stat3');
+
+  var s1 = parseInt(ele1.text().replace(/,/g, ''))
+  var s2 = parseInt(ele2.text().replace(/,/g, ''))
+  var s3 = parseInt(ele3.text().replace(/,/g, ''))
+
+  function updateS1() {
+    s1 += 1;
+    ele1.text(numberWithCommas(s1));
+  }
+
+  (function loop() {
+      var rand = Math.round(Math.random() * (3000 - 500)) + 500;
+      setTimeout(function() {
+        updateS1();
+        loop();
+      }, rand);
+  }());
+
+  function updateS2() {
+    s2 += 1;
+    ele2.text(numberWithCommas(s2));
+  }
+
+  (function loop() {
+      var rand = Math.round(Math.random() * (3000 - 500)) + 500;
+      setTimeout(function() {
+        updateS2();
+        loop();
+      }, rand);
+  }());
+
+  function updateS3() {
+    s3 += 1;
+    ele3.text(numberWithCommas(s3));
+  }
+
+  (function loop() {
+      var rand = Math.round(Math.random() * (3000 - 500)) + 500;
+      setTimeout(function() {
+        updateS3();
+        loop();
+      }, rand);
+  }());
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+</script>
+{% endblock %}

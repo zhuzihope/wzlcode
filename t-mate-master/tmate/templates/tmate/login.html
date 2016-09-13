@@ -1,0 +1,72 @@
+{% extends "tmate/base.html" %}
+
+{% block nav %}
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+{% block static %}
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="form-container">
+  <div id="close">
+    <a href="{% url 'index' %}"><i class="fa fa-times fa-2x"></i></a>
+  </div>
+  <div class="text_area_width">
+    <!-- new -->
+    <div class="titles">
+      <h1 id="login_title">Login</h1>
+    </div>
+    <!--end-->
+  </div>
+
+  <div class="center_form">
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+      {{ form.non_field_errors }}
+      <table>
+        <tr>
+          <th>
+            {{ form.username.errors }}
+            <img class="register_icon" src="{% static 'img/user-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.username.errors }}
+            <input id="id_username" placeholder="Username" maxlength="254" name="username" type="text">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            {{ form.password1.errors }}
+            <img class="register_icon" src="{% static 'img/password-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.password.errors }}
+            <input id="id_password" placeholder="Password" name="password" type="password">
+          </td>
+        </tr>
+        {% csrf_token %}
+      </table>
+      <!--how to add this as register?-->
+      <div class="bottom_buttons">
+        <p id="log_reg"><a href="{% url 'register' %}" class="ui button">If you don't have a Tmate account, register here.</a></p>
+        <!--new-->
+        <a href="{% url 'register' %}?is_to_find=1"><input type="submit" value="Log In" class="sign_up_button"/></a>
+      </div>
+      {% csrf_token %}
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+{% endblock %}
+
+{% block js %}
+<script>
+  $('#id_username').focus();
+</script>
+{% endblock %}

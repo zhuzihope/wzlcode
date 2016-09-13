@@ -1,0 +1,230 @@
+{% extends "tmate/base.html" %}
+
+{% block nav %}
+{% endblock %}
+
+{% block title %}Register{% endblock %}
+
+{% block static %}
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="register-container">
+
+  <div id="back">
+      <a href="javascript:history.back()"><i class="fa fa-arrow-left fa-2x"></i></a>
+  </div>
+  <div id="close">
+    <a href="{% url 'index' %}"><i class="fa fa-times fa-2x"></i></a>
+  </div>
+
+  <div class="text_area_width">
+    <h1 id="intro_big" class="upper">Create Your Account</h1>
+  </div>
+
+  <div class="center_form">
+    <form method="POST" enctype="multipart/form-data">
+      {{ form.non_field_errors }}
+      <table>
+        <tr>
+          <th>
+            {{ form.user_type.errors }}
+            <img class="register_icon" src="{% static 'img/type-01.png' %}"/>
+          </th>
+          <td>
+
+            {% if is_to_find %}
+
+            <!--
+            <select id="id_user_type" name="user_type">
+              <option value="2" selected="selected">individual hunter</option>
+              <option value="3">company hunter</option>
+            </select>
+            -->
+
+            <div class="radio_group">
+              <label for="user_type_2"><input type="radio" name="user_type" value="2" id="user_type_2"/>Individual</label>
+              <label for="user_type_3"><input type="radio" name="user_type" value="3" id="user_type_3"/>Company</label>
+            </div>
+
+            {% else %}
+
+            <!--
+            <select id="id_user_type" name="user_type">
+              <option value="0" selected="selected">programmer</option>
+              <option value="1">designer</option>
+            </select>
+            -->
+
+            <div class="radio_group">
+              <label for="user_type_0"><input type="radio" name="user_type" value="0" id="user_type_0"/>Programmer</label>
+              <label for="user_type_1"><input type="radio" name="user_type" value="1" id="user_type_1"/>Designer</label>
+            </div>
+
+            {% endif %}
+
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/user-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.first_name.errors }}
+              <input id="{{form.first_name.id_for_label}}" placeholder="First Name" maxlength="20" name="{{form.first_name.name}}" type="text"/>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/user-01.png' %}"/>
+          </th>
+          <td>
+            <input id="{{form.last_name.id_for_label}}" placeholder="Last Name" maxlength="20" name="{{form.last_name.name}}" type="text"/>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/user-01.png' %}"/>
+          <td>
+            {{ form.username.errors }}
+            <input id="{{form.username.id_for_label}}" placeholder="Username" maxlength="20" name="{{form.username.name}}" type="text">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/email-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.email.errors }}
+            <input id="id_email" maxlength="50" placeholder="Email" name="email" type="email">
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/password-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.password1.errors }}
+            <input id="id_password1" maxlength="200" placeholder="Password" name="password1" type="password">
+          </td>
+        </tr>
+
+        <tr class="button_line">
+          <th>
+            <img class="register_icon" src="{% static 'img/password-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.password2.errors }}
+            <input id="id_password2" maxlength="200" placeholder="Password Again" name="password2" type="password">
+          </td>
+        </tr>
+        <tr class="first_part">
+          <th>
+          </th>
+          <td>
+            <h2 id="tell_me">Tell More About You</h2>
+          </td>
+        </tr>
+
+        <tr class="first_part">
+          <th>
+            <img class="register_icon" src="{% static 'img/location-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.location.errors }}
+            <input id="id_location" maxlength="1024" placeholder="Location" name="location" type="text">
+          </td>
+        </tr>
+        {% if is_to_find %}
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/position-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.website.errors }}
+            <input id="id_website" maxlength="256" placeholder="Website" name="website" type="url">
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/position-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.position.errors }}
+            <input id="id_position" maxlength="1024" placeholder="Position" name="position" type="text">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/resume-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.resume_url.errors }}
+            <input id="id_resume_url" placeholder="Resume" maxlength="256" name="resume_url" type="url">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/link-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.portfolio.errors }}
+            <input id="id_portfolio" maxlength="256" placeholder="Portfolio URL" name="portfolio" type="url">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/skill-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.skills.errors }}
+            {{form.skills}}
+          </td>
+        </tr>
+        {% endif %}
+        <tr>
+          <th>
+            <img class="register_icon" src="{% static 'img/profile-01.png' %}"/>
+          </th>
+          <td>
+            {{ form.image.errors }}
+            {{form.image}}
+          </td>
+        </tr>
+        <tr>
+          <th>
+          </th>
+          <td>
+            {{ form.overview.errors }}
+            <textarea cols="40" id="id_overview" name="overview" placeholder="Overview" rows="10"></textarea>
+          </td>
+        </tr>
+
+
+        <input type='hidden' name='csrfmiddlewaretoken' value='ERu25O8v95Kjqm2RR4YMOCD7XvPsphwb' />
+      </table>
+      <div class="bottom_buttons">
+        
+        <input class="sign_up_button" type="submit" value="Submit"/>
+      </div>
+      {% csrf_token %}
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block foot %}
+{% endblock %}
+
+{% block js %}
+<script>
+  $('#id_first_name').focus();
+</script>
+{% endblock %}
