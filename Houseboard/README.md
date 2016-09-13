@@ -1,6 +1,4 @@
 Go-Girls
 ========
-temp address for fb app requirement: http://vioyqz.pairserver.com/
-
-web design class final assignment interior website design
-This is an updated line. Come on girls, let's do this!
+If you want to browse this website, please go to http://wenzhuliu.com/Houseboard/.
+This GitHub version doesn't include any images.
