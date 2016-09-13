@@ -1,0 +1,148 @@
+section.single-design-page {
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	background:#f5f5f5;
+
+}
+
+#single {
+    width: 90%;
+    margin:0 auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-bottom: 20px;
+	background:#f5f5f5;
+    
+}
+
+.single_mainimg {
+	width:70%;
+	display:inline-block;
+	margin:0 8% 0 8%;
+	border-radius:5px;
+}
+
+
+#single_column {
+	
+    float:left;
+    width: 60%;
+    padding:20px 0% 40px 0%;
+	
+	}
+#single_column_R{
+	float:right;
+    width: 40%;
+    padding:20px 0% 40px 0%;
+	
+	}
+	
+#single_column_R_wrapper{
+	background:#fff;
+	border-radius:8px;
+	box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.12);
+	padding:15px 15px;
+	}	
+	
+.single_home {
+	float:right;
+	margin:15px 15px 0 0;
+	cursor: pointer;
+	}
+	
+#single_column_R hr{
+	width: 80%;
+    border-color: #b3f900;
+    size: 0.5px;
+	margin-left:10%;
+	}
+	
+#single ul.tag h3{
+	color:#6eae43;
+	margin:15px 0 8px 0;
+	}
+	
+#single ul.tag li{
+	display:inline-block;
+	margin-bottom:10px;
+	margin-right:8px;
+	padding:5px 13px 5px 13px;
+	border-radius:5px;
+	color:#fff;
+	
+background: -moz-linear-gradient(45deg,  #6eae43 0%, #9ecb3a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#6eae43), color-stop(100%,#9ecb3a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* IE10+ */
+background: linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6eae43', endColorstr='#9ecb3a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	}
+div#single_column_R_wrapper p:nth-of-type(2){
+	color:#929292;
+	margin:10px 0 15px 0;
+	}
+#single_column_R h2{
+	color:#6eae43;
+	margin-top:20px;
+	margin-bottom:20px;
+	}
+#single_column_R_wrapper div a{
+	display:inline-block;
+}
+
+.single_imgwrapper{
+	width: 200px;
+    height:200px;
+    overflow: hidden;
+    margin:0 10px 20px 0;
+    position: relative;
+	border-radius:5px;
+	}
+.crop {
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto; 
+    height: auto;
+    width: 100%;
+}
+
+/* been viewed on phone screen, resolution at most 500px */
+@media screen and (max-width: 767px) {
+#single_column {
+	width:100%;
+	padding: 0;
+	margin-top: 20px;
+}
+#single_column_R {
+	width:100%;
+	padding: 0;
+	margin: 20px 0;
+	text-align: center;
+}
+
+.single_mainimg {
+	width:90%;
+	display:block;
+	margin: 30px auto;
+	padding: 0;
+	border-radius:5px; 
+
+}
+
+.single_imgwrapper {
+	width: 90%;
+	overflow: hidden;
+	margin: 30px auto;
+	border-radius: 5px;
+}
+
+
+}

@@ -1,0 +1,8 @@
+/* been viewed on phone screen, resolution at most 500px */
+@media screen and (max-width: 500px) {
+
+.meta ul li {
+	width:100%;
+}
+
+}

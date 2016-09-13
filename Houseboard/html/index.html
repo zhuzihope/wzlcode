@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HouseBoard</title>
+
+     <script src="../js/fb.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" >
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    
+</head>
+
+<script>
+</script>
+
+<body>
+	
+    <header>
+    	<!--<img src="logo.png" alt="VW logo" title="VW logo">-->
+        <form id="searchbox" action="">
+            <input id="submit" type="submit" value="SEARCH">
+            <input id="search" type="search" >
+            
+        </form>
+        <nav class="meta">
+			<ul>
+				<li><a href="likebook.html"><img src="../img/likebook-icon.png" width=20px height=auto/>Likebook</a></li>
+				<li><a href="../layout_tool/layout.html"><img src="../img/designboard-icon.png" width=20px height=auto/>Designboard</a></li>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">Login
+</fb:login-button>
+				
+			</ul>
+		</nav>
+        <a href="#" class="logo"><p>Dohouse</p></a>
+		
+        <nav class="main">
+			<ul>
+				<li>
+                    <a id="gallery_button" >Likebook</a>
+                    <ul id="gallery_selection">
+                        <li class="target">
+                            <p>space</p>
+                            <ul class="detail">
+                                <li>
+                                    <input type="checkbox" value="None" name="check" />
+                                    <label for="squaredFour">All</label> 
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">Living room</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">Dining room</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">Kitchen</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">Bedroom</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">Garden</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">Bathroom</label>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="target">
+                            <p>style</p>
+                            <ul class="detail">
+                                <li>
+                                    <input type="checkbox" value="None" name="check" />
+                                    <label for="squaredFour">All</label> 
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">North Europe</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">South Europe</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">East Asian</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">North Asia</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">North America</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">America</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="None"  name="check" />
+                                    <label for="squaredFour">Africa</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="target">
+                            <p>color</p>
+                            <ul class="detail">
+                                <li>All</li>
+                                <li>
+                                    <div class="color1"></div>
+                                </li>
+                                <li>
+                                    <div class="color2"></div>
+                                </li>
+                                <li>
+                                    <div class="color3"></div>
+                                </li>
+                                <li>
+                                    <div class="color4"></div>
+                                </li>
+                                <li>
+                                    <div class="color5"></div>
+                                </li>
+                                <li>
+                                    <div class="color6"></div>
+                                </li>
+                                <li>
+                                    <div class="color"></div>
+                                </li>
+                                <li>
+                                    Others
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+			</ul>
+            <p class="clear"></p>
+		</nav>
+        <hr>
+    </header>
+    
+    <section>
+        <div class="column">
+            <div class="show">
+                <img class="mainimg" src="img/livingroom.jpg" />
+                <a href="#"><img class="like" src="img/like.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+
+            <div class="show">
+                <img class="mainimg" src="img/living1.1.jpg" />
+                <a href="#"><img class="like" src="img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="img/picture6.jpg" />
+                <a href="#"><img class="like" src="img/like.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="show">
+                <img class="mainimg" src="img/1.jpg" />
+                <a href="#"><img class="like" src="img/like.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="img/picture3.jpg" />
+                <a href="#"><img class="like" src="img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="img/chair.jpg" />
+                <a href="#"><img class="like" src="img/like.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="show">
+                <img class="mainimg" src="img/picture2.jpg" />
+                <a href="#"><img class="like" src="img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="img/picture1.jpg" />
+                <a href="#"><img class="like" src="img/like.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+            
+            <div class="show">
+                <img class="mainimg" src="img/picture5.jpg" />
+                <a href="#"><img class="like" src="img/like.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="img/liked.png" />123</p>
+            </div>
+            
+        </div>
+        <p class="clear"></p>
+    
+    </section>
+    
+    <footer>
+        <p>©2014 My Website LLC. All rightls reserved.</p>
+    </footer>
+    
+    <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   */
+
+   html, body, div, span, applet, object, iframe,
+   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+   a, abbr, acronym, address, big, cite, code,
+   del, dfn, em, img, ins, kbd, q, s, samp,
+   small, strike, strong, sub, sup, tt, var,
+   b, u, i, center,
+   dl, dt, dd, ol, ul, li,
+   fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td,
+   article, aside, canvas, details, embed, 
+   figure, figcaption, footer, header, hgroup, 
+   menu, nav, output, ruby, section, summary,
+   time, mark, audio, video {
+   	margin: 0;
+   	padding: 0;
+   	border: 0;
+   	font-size: 100%;
+   	font: inherit;
+   	vertical-align: baseline;
+   }
+   /* HTML5 display-role reset for older browsers */
+   article, aside, details, figcaption, figure, 
+   footer, header, hgroup, menu, nav, section {
+   	display: block;
+   }
+   body {
+   	line-height: 1;
+   }
+   ol, ul {
+   	list-style: none;
+   }
+   blockquote, q {
+   	quotes: none;
+   }
+   blockquote:before, blockquote:after,
+   q:before, q:after {
+   	content: '';
+   	content: none;
+   }
+   table {
+   	border-collapse: collapse;
+   	border-spacing: 0;
+   }
+
+
+
+/* ------------------ my style sheet -------------------- */
+body {
+  font-family :"Lato";
+}
+
+.clear{
+  clear:both;
+}
+
+div#layout_board {
+	background: url("../image/fp1.png");
+  height: 100%;
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+div#layout_all {
+  width:90%;
+  min-width: 90%;
+  height: 600px;
+  display: block;
+  margin: 0 auto 50px auto;
+  background: white;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {   
+border-color: none;
+box-shadow: none;
+outline: 0 none;}
+
+
+#nav{
+    list-style:none;
+    font-weight:bold;
+    margin-bottom:10px;
+    float:left; /* Clear floats */
+    width:100%;
+    /* Bring the nav above everything else--uncomment if needed.
+    position:relative;
+    z-index:5;
+    */
+}
+
+div.dynDiv_moveDiv {
+  position: absolute;
+  display: block;
+  width:50px;
+  height:50px;
+  z-index:10;
+}
+
+
+div#layout_drop {
+  float: right;
+}
+
+div#layout_board {
+  width: 85%;
+  min-width: 550px;
+  float: left;
+}
+
+div#layout_drop {
+  width: 15%;
+  max-width: 120px;
+}
+
+div#layout_drop_box_wrapper {
+  position: relative;
+  width:100%;
+  margin-top: 20px;
+}
+div#layout_drop_box {
+  vertical-align: center;
+  display: block;
+  margin: 0 auto;
+} 
+
+footer {
+  display: block;
+  bottom:0;
+  width: 100%;
+}
+
+div#layout_board_toolbar {
+  width: 765px;
+  
+  padding:10px;
+  height: 30px;
+  text-align: center;
+  background:#efefef;
+/*
+  background: #b3f900; 
+  background: -moz-linear-gradient(45deg,  #b3f900 2%, #f5f76c 100%, #ffffff 100%, #f5f76c 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(2%,#b3f900), color-stop(100%,#f5f76c), color-stop(100%,#ffffff), color-stop(100%,#f5f76c)); 
+  background: -webkit-linear-gradient(45deg,  #b3f900 2%,#f5f76c 100%,#ffffff 100%,#f5f76c 100%);
+  background: -o-linear-gradient(45deg,  #b3f900 2%,#f5f76c 100%,#ffffff 100%,#f5f76c 100%); 
+  background: -ms-linear-gradient(45deg,  #b3f900 2%,#f5f76c 100%,#ffffff 100%,#f5f76c 100%);
+  background: linear-gradient(45deg,  #b3f900 2%,#f5f76c 100%,#ffffff 100%,#f5f76c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3f900', endColorstr='#f5f76c',GradientType=1 ); */
+  
+}
+div.layout_board_tool {
+  display: inline-block;
+  background: rgba(1, 1, 0, 1);
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border: 1px solid #fff;
+  padding: 6px 4px;
+  cursor: pointer;
+  color: #fff;
+
+}
+
+div.layout_board_tool:hover {
+  background-color: #b3f900;
+  color:white;
+} 
+
+div#layout_drop_header{
+  color: white;
+  width: 100%;
+  background: #6eae43; /* Old browsers */
+
+background: -moz-linear-gradient(45deg,  #6eae43 0%, #9ecb3a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#6eae43), color-stop(100%,#9ecb3a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* IE10+ */
+background: linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6eae43', endColorstr='#9ecb3a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  padding:15px 0;
+
+  text-align: center;
+}
+
+div.layout_furniture {
+  vertical-align: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+div.layout_furniture_column {
+  width:32%;
+  margin-right: 2%;
+  float: left;
+}
+
+div.layout_furniture_column#col_3 {
+  margin-right: 0;
+}
+div.layout_furniture_column div {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+div.layout_furniture_column div img{
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+}
+
+div.layout_furniture_column div img.like {
+  width: 10%;
+height: auto;
+position: absolute;
+top: 20px;
+left: 85%;
+transition: all 0.3s ease-out;
+border-radius: 0;
+
+  box-shadow: none;
+}
+
+nav.main {
+  font-weight: 500;
+}
+img.remove {
+  display: none;
+  position: relative;
+  z-index: 200;
+  width: 20px;
+  top: -5px;
+  left: 90%;
+  cursor: pointer;
+}
+
+div#mobile_forbidden{
+  display: none;
+}
+
+/* been viewed on phone screen, resolution at most 500px */
+@media screen and (max-width: 767px){
+
+  div#layout_all {
+    position: relative;
+    width:100%;
+    overflow: hidden;
+  }
+
+  div#layout_drop {
+    display: none;
+  }
+
+  div#mobile_forbidden{
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    z-index: 400;
+    width: 100%;
+  }
+
+  div#mobile_forbidden_bg{
+    position: relative;
+    color: white;
+    font-weight: 300;
+    background-color: black;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+  }
+
+  div#layout_board{
+    float: none;
+    top: 0px;
+    position: absolute;
+  }
+
+  p#mobile_forbidden_text {
+    position: absolute;
+    color:white;
+    z-index: 200;
+    margin: 200px 10%;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  p#mobile_forbidden_text b {
+    font-size: 100px;
+    font-weight: 300;
+  }
+
+ 
+}
+
+/* been viewed on phone screen, resolution at most 500px */
+@media screen and (max-width: 500px) {
+  nav.meta{
+    margin: 0;
+  }
+  .layout_furniture {
+    display: none;
+  }
+}
+
+@media screen and (max-device-width : 1024px) and (orientation : portrait) {
+  div#layout_all {
+    position: relative;
+    width:100%;
+    overflow: hidden;
+  }
+
+  div#layout_drop {
+    display: none;
+  }
+
+  div#mobile_forbidden{
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    z-index: 400;
+    width: 100%;
+  }
+
+  div#mobile_forbidden_bg{
+    position: relative;
+    color: white;
+    font-weight: 300;
+    background-color: black;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+  }
+
+  div#layout_board{
+    float: none;
+    top: 0px;
+    position: absolute;
+  }
+
+  p#mobile_forbidden_text {
+    position: absolute;
+    color:white;
+    z-index: 200;
+    margin: 200px 10%;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  p#mobile_forbidden_text b {
+    font-size: 100px;
+    font-weight: 300;
+  }
+
+
+
+  .layout_furniture {
+    /* display: none; */
+  }
+}
+
+@media screen and (max-device-width : 1024px) and (orientation : landscape) {
+      div#layout_all {
+    position: relative;
+    width:100%;
+    overflow: hidden;
+  }
+
+  div#layout_drop {
+    display: none;
+  }
+
+  div#mobile_forbidden{
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    z-index: 400;
+    width: 100%;
+  }
+
+  div#mobile_forbidden_bg{
+    position: relative;
+    color: white;
+    font-weight: 300;
+    background-color: black;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+  }
+
+  div#layout_board{
+    float: none;
+    top: 0px;
+    position: absolute;
+  }
+
+  p#mobile_forbidden_text {
+    position: absolute;
+    color:white;
+    z-index: 200;
+    margin: 200px 10%;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  p#mobile_forbidden_text b {
+    font-size: 100px;
+    font-weight: 300;
+  }
+
+
+
+  .layout_furniture {
+   
+  }
+}

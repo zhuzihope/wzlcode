@@ -1,0 +1,26 @@
+html {
+	font-family: "Lato";
+}
+div#header_line {
+	position: absolute;
+	background-color: #00d069;
+	width: 100%;
+	height: 40px;
+	z-index:-10;
+}
+
+form#searchbox,
+nav.meta ul li a
+{
+	font-family :"Lato";
+	color:white;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+}
+
+.logo {
+	
+	letter-spacing: 0.3em;
+		font-family :"Lato";font-weight: 600;
+		font-size: 30px;
+}

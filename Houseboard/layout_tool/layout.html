@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Design Board</title>
+
+	<script src="../js/fb.js"></script>
+    <script src="js/constant.js"></script>
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/byrei-dyndiv_1.0rc1.js"></script>
+    <script src="js/showFurniture.js"></script>
+	<script src="js/dragdrop.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/byrei-dyndiv_0.5.css">
+	
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/meta_style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+	<header>
+
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png"/>
+        </a>
+
+        <div id="header_line">
+            <!--<img src="logo.png" alt="VW logo" title="VW logo">-->
+            <form id="searchbox" action="">
+                <input id="submit" type="submit" value="SEARCH">
+                <input id="search" type="search" >
+                
+            </form>
+        </div>
+         
+        <nav class="meta">
+            <ul>
+                <a href="../html/likebook.html"><li><img src="../img/likebook-icon.png" width=15px height=auto/>Likebook</li></a>
+                <a href="../layout_tool/layout.html"><li><img src="../img/designboard-icon.png" width=15px height=auto/>Designboard</li></a>
+                
+                
+            </ul>
+        </nav>
+       
+         <nav class="main">
+            <ul>
+                <li>
+                    <span><a>Design Board</a></span>
+                    <!--<a id="gallery_button" >Search in Gallery<div class="arrow up"></div></a>-->
+                    <hr>
+                </li>
+            </ul>
+            <p class="clear"></p>
+        </nav>
+       
+    </header>
+
+	<div id="layout_all">
+        <div id ="mobile_forbidden">
+            <p id="mobile_forbidden_text"><b>Sorry...</b></br>Please use a computer to get access to our designboard.</br>Designboard helps you to make the floor plan of your house :)</p>
+            <div id="mobile_forbidden_bg"></div>
+        </div>
+		<div id="layout_board" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<!--div id="layout_board_toolbar">
+				<div class="layout_board_tool">Upload Floor Plan</div>
+				<div class="layout_board_tool">Tag</div>
+				<div class="layout_board_tool">Color</div>
+			</div-->
+		</div>
+
+
+		<div id="layout_drop">
+			<div id="layout_drop_header">Product</div>
+            <div id="layout_drop_box_wrapper">
+			     <div id="layout_drop_box">
+                 </div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+    <div class="layout_furniture">
+        <div class="layout_furniture_column" id="col_1"></div>
+        <div class="layout_furniture_column" id="col_2"></div>
+        <div class="layout_furniture_column" id="col_3"></div>
+        <div class="clear"></div>
+    </div>
+
+	  <footer>
+                                        <div>
+                                           <hr>
+                                        </div>
+                                        
+                                        <div class="contact"> <a href="../html/about.html"><img src="../img/logo-bottom.png" title="about"/></a>
+                                        </div>
+                                        
+                                        <div>
+                                          <hr>
+                                        </div>
+                                        <p class="clear"></p>
+                                        <div>
+                                           <p><a href="mailto:info@houseboard.com">info@houseboard.com</a></p>
+                                        </div>
+                                    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

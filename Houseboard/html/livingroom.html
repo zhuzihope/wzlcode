@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DoHouse</title>
+
+    <script src="../js/fb.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" >
+    <link href="../css/meta_style.css" rel="stylesheet" type="text/css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    
+    
+</head>
+
+<script>
+</script>
+
+<body>
+    
+    <header>
+        <div id="header_line"></div>
+        <!--<img src="logo.png" alt="VW logo" title="VW logo">-->
+        <form id="searchbox" action="">
+            <input id="submit" type="submit" value="SEARCH">
+            <input id="search" type="search" >
+            
+        </form>
+        <nav class="meta">
+            <ul>
+                <li><a href="likebook.html"><img src="../img/likebook-icon.png" width=15px height=auto/>Likebook</a></li>
+                <li><a href="../layout_tool/layout.html"><img src="../img/designboard-icon.png" width=15px height=auto/>Designboard</a></li>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">Login
+</fb:login-button>
+                
+            </ul>
+        </nav>
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png"/>
+        </a>
+         <nav class="main">
+            <ul>
+                <li>
+                    <span><a id="likebook_back" href="likebook.html">LikeBook</a><a> / livingroom</a></span>
+                    <!--<a id="gallery_button" >Search in Gallery<div class="arrow up"></div></a>-->
+                    <hr>
+                    <!--<ul id="gallery_selection">
+                        <li class="target">
+                            <p>space</p>
+                            <ul class="detail">
+                                <div class="combine_space">
+                                    <li>
+                                        <input type="checkbox" value="None" name="check" />
+                                        <label for="squaredFour">All</label> 
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">House</label>
+                                    </li>
+                                
+
+                                
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Living room</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Dining room</label>
+                                    </li>
+                                
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Kitchen</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Kids Room</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Bedroom</label>
+                                    </li>
+                                   
+                                </div>
+                                <div class="combine_space">
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Bathroom</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Study</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Sun Room</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Garden</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Stairway</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Storage</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour"><strong>Products</strong></label>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+
+                        <li class="target">
+                            <p>style</p>
+                            <ul class="detail">
+                                <div class="combine_space">
+                                    <li>
+                                        <input type="checkbox" value="None" name="check" />
+                                        <label for="squaredFour">All</label> 
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Shaker</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Medieval</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Modern</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Gothic</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Zen</label>
+                                    </li>
+                                </div>
+                                <div class="combine_space">
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">American Traditional</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Art deco</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Minimalist</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Country</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Janpanese</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="None"  name="check" />
+                                        <label for="squaredFour">Rustic</label>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="target">
+                            <p>color</p>
+                            <ul class="detail">
+                                <div class="combine_color">
+                                    <li>
+                                        <a href="#"><div class="circle" id="color1"><h5>All</h5></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color2"></div></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color3"></div></a>
+                                    </li>
+                                </div>
+                                <div class="combine_color">
+                                    <li>
+                                        <a href="#"><div class="circle" id="color4"></div></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color5"></div></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color12"></div></a>
+                                    </li>
+                                </div>
+                                <div class="combine_color">
+                                    <li>
+                                        <a href="#"><div class="circle" id="color6"></div></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color7"></div></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color8"></div></a>
+                                    </li>
+                                </div>
+                                <div class="combine_color">
+                                    <li>
+                                        <a href="#"><div class="circle" id="color9"></div></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color10"></div></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><div class="circle" id="color11"></div></a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>-->
+                </li>
+            </ul>
+            <p class="clear"></p>
+        </nav>
+       
+    </header>
+    
+    <section>
+
+        <div class="column">
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv1.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv2.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv3.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv4.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv5.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv6.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv7.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv8.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+            
+            <div class="show">
+                <img class="mainimg" src="../img/livingroom/lv9.jpg" />
+                <a href="#" class="delete"><img class="like" src="../img/liked.png" /></a>
+                <p>Dear Lillie Fall Home Tour - I love this peaceful
+    bedroom.</p>
+                <p><img class="numlike" src="../img/liked.png" />123</p>
+            </div>
+            
+        </div>
+        <p class="clear"></p>
+    
+    </section>
+    
+     <footer>
+                                        <div>
+                                           <hr>
+                                        </div>
+                                        
+                                        <div class="contact"> <a href="about.html"><img src="../img/logo-bottom.png" title="about"/></a>
+                                        </div>
+                                        
+                                        <div>
+                                          <hr>
+                                        </div>
+                                        <p class="clear"></p>
+                                        <div>
+                                           <p><a href="mailto:info@houseboard.com">info@houseboard.com</a></p>
+                                        </div>
+                                    </footer>
+    
+    <script src="../main.js"></script>
+
+</body>
+</html>

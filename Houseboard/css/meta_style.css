@@ -1,0 +1,79 @@
+/* been viewed on phone screen, resolution at most 500px */
+@media screen and (max-width: 500px) {
+
+
+div#header_line{
+	display: none;
+
+}
+
+
+#searchbox {
+	display: none;
+}
+nav.meta {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	right: 0;
+
+
+}
+
+.meta ul li {
+	width:100%;
+	text-align: center;
+	padding: 20px 0;
+	margin: 0;
+
+}
+
+.meta ul a{
+	vertical-align: center;
+	padding: 20px 0;
+
+
+	background: -moz-linear-gradient(45deg,  #6eae43 0%, #9ecb3a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#6eae43), color-stop(100%,#9ecb3a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* IE10+ */
+	background: linear-gradient(45deg,  #6eae43 0%,#9ecb3a 100%); /* W3C */
+}
+
+a.logo{
+	z-index:-100;
+}
+
+.target {
+		width: 30%;
+		padding: 0;
+}
+
+.combine_space{
+    padding: 0;
+}
+
+.combine_space:first-child{
+    padding: 0;
+}
+
+
+nav.main {
+	margin-top:20px;
+}
+
+section div.column {
+	width:100%;
+	float: none;
+}
+
+a.logo{
+	margin: 50px auto;
+}
+
+li.target {
+	padding-right: 0px;
+}
+
+}
